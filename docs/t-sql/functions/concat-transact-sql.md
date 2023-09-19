@@ -26,21 +26,20 @@ This function returns a string resulting from the concatenation, or joining, of 
 ## Syntax  
   
 ```syntaxsql
-CONCAT ( string_value1, string_value2 [, string_valueN ] )  
+CONCAT ( argument1, argument2 [, argumentN ] )  
 ```  
   
 [!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
 
 ## Arguments
-*string_value*  
-A string value to concatenate to the other values. The `CONCAT` function requires at least two *string_value* arguments, and no more than 254 *string_value* arguments.
+*argument1, argument2, argumentN*  
+An expression of any type, including column names. The `CONCAT` function requires at least two arguments, and no more than 254 arguments.
   
 ## Return types  
-*string_value*  
 A string value whose length and type depend on the input.
   
 ## Remarks  
-`CONCAT` takes a variable number of string arguments and concatenates (or joins) them into a single string. It requires a minimum of two input values; otherwise, `CONCAT` will raise an error. `CONCAT` implicitly converts all arguments to string types before concatenation. `CONCAT` implicitly converts null values to empty strings. If `CONCAT` receives arguments with all **NULL** values, it will return an empty string of type **varchar**(1). The implicit conversion to strings follows the existing rules for data type conversions. See [CAST and CONVERT &#40;Transact-SQL&#41;](../../t-sql/functions/cast-and-convert-transact-sql.md) for more information about data type conversions.
+`CONCAT` takes a variable number of arguments and concatenates (or joins) them into a single string. It requires a minimum of two input values; otherwise, `CONCAT` will raise an error. `CONCAT` implicitly converts all arguments to string types before concatenation. `CONCAT` implicitly converts null values to empty strings. If `CONCAT` receives arguments with all **NULL** values, it will return an empty string of type **varchar**(1). The implicit conversion to strings follows the existing rules for data type conversions. See [CAST and CONVERT &#40;Transact-SQL&#41;](../../t-sql/functions/cast-and-convert-transact-sql.md) for more information about data type conversions.
   
 The return type depends on the type of the arguments. This table illustrates the mapping:
   
